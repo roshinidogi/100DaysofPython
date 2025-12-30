@@ -9,7 +9,7 @@ def fetch_unicode_grid(url: str):
     # Send a GET request
     response = requests.get(url)
     if response.status_code != 200:
-        raise ValueError(f"Failed to fetch data from the URL: {url}. Status code: {response.status_code}")
+        raise ValueError(f"Failed to fetch data.txt from the URL: {url}. Status code: {response.status_code}")
 
     # Parse HTML content
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -34,7 +34,7 @@ def fetch_unicode_grid(url: str):
             continue
 
     if not grid:
-        print("No valid grid data found.")
+        print("No valid grid data.txt found.")
         return
 
     # Determine grid size

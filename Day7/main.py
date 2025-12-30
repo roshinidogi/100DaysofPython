@@ -7,7 +7,7 @@ def fetch_secret_message(url: str):
     """
     response = requests.get(url)
     if response.status_code != 200:
-        raise ValueError(f"Failed to fetch data from the URL. Status code: {response.status_code}")
+        raise ValueError(f"Failed to fetch data.txt from the URL. Status code: {response.status_code}")
 
     soup = BeautifulSoup(response.text, 'html.parser')
     lines = [line.get_text().strip() for line in soup.find_all('p') if line.get_text().strip()]
@@ -29,7 +29,7 @@ def fetch_secret_message(url: str):
             i += 1
 
     if not positions:
-        print("No valid grid data found.")
+        print("No valid grid data.txt found.")
         return
 
     max_x = max(p[1] for p in positions)
